@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import VideoPlayer from '../src/components/VideoPlayer'
-import './App.css'
+
 import { Helmet } from 'react-helmet';
 
 class App extends Component {
@@ -41,23 +41,23 @@ class App extends Component {
 
   render() {
     return (
-      <>
+      <div>
         <Helmet>
           <meta charSet="utf-8" />
           <title>Trailer View</title>
         </Helmet>
-        <div>
-          <h1>Movies Trailer</h1>
-          <div className="video-list">
+        <div className='mt-[200px] mb-[100px] p-5 flex flex-col justify-center items-center gap-7'>
+          <h1 className='md:text-5xl text-3xl font-bold'>Movies Trailer</h1>
+          <div className='md:flex md:gap-3 justify-center items-center'>
             {this.state.videoList.map((video, index) => (
-              <button key={index} onClick={() => this.handleVideoClick(index)}>
+              <label className='cursor-pointer bg-gray-300 md:w-auto w-full md:h-8 md:flex flex-col flex justify-center items-center p-4 rounded-md font-semibold md:gap-4' key={index} onClick={() => this.handleVideoClick(index)}>
                 Play {video.name}
-              </button>
+              </label >
             ))}
           </div>
-          <VideoPlayer className='video-player' videoId={this.state.videoList[this.state.currentVideoIndex].id} />
+          <VideoPlayer videoId={this.state.videoList[this.state.currentVideoIndex].id} />
         </div>
-      </>
+      </div>
     );
   }
 }
