@@ -1,5 +1,5 @@
 # Movie Trailer
 
-![View](src/assets/images/view-page.png)
+![View](public/images/Movie-View.png)
 
 
